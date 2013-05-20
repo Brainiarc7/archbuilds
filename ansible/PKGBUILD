@@ -4,7 +4,7 @@ pkgver=1.1
 pkgrel=2
 pkgdesc='A radically simple deployment, model-driven configuration management, and command execution framework'
 arch=('any')
-url='http://ansible.github.com'
+url='http://ansible.cc/'
 license=('GPL3')
 depends=('python2' 'python2-yaml' 'python2-paramiko>=1.7.7' 'python2-jinja')
 makedepends=('git' 'asciidoc' 'fakeroot')
