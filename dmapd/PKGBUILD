@@ -1,0 +1,36 @@
+# Contributor: Nicolas Quiénot < niQo at aur >
+
+pkgname=dmapd
+pkgver=0.0.51
+pkgrel=1
+pkgdesc="Serve DAAP (iTunes) and DPAP (iPhoto) shares from Linux"
+arch=(i686 x86_64)
+url="http://www.flyn.org/projects/dmapd/"
+license=(GPL)
+depends=('libdmapsharing' 'graphicsmagick')
+makedepends=()
+options=('!libtool')
+backup=('etc/dmapd.conf')
+source=(http://www.flyn.org/projects/$pkgname/$pkgname-$pkgver.tar.gz)
+
+
+build() {
+  cd "$srcdir/$pkgname-$pkgver"
+
+  ./configure --prefix=/usr
+  make
+}
+
+package() {
+  cd "$srcdir/$pkgname-$pkgver"
+
+  make DESTDIR="$pkgdir/" install
+
+  #create dmapd user
+  mkdir -p ${pkgdir}/var/cache/dmapd/DAAP
+
+  install -Dm644 "$srcdir/$pkgname-$pkgver"/distro/dmapd.conf ${pkgdir}/etc/dmapd.conf || return 1
+  install -Dm755 "$srcdir/$pkgname-$pkgver"/distro/dmapd.service ${pkgdir}/usr/lib/systemd/system/dmapd.service || return 1
+}
+
+md5sums=('6f6de9b3ca7cd9955902b5368f553e52')
