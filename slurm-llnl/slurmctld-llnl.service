@@ -8,7 +8,7 @@ After=network.target auditd.service munged.service slurmdbd-llnl.service
 
 [Service]
 Type=forking
-ExecStart=/usr/sbin/slurmctld
+ExecStart=/usr/bin/slurmctld
 ExecStop=/bin/kill $MAINPID
 ExecReload=/bin/kill -HUP $MAINPID
 PIDFile=/run/slurmctld.pid

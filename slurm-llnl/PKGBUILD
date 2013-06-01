@@ -21,9 +21,9 @@ source=("slurm-llnl-tmpfiles.conf" "slurmdbd-llnl.service" "slurmd-llnl.service"
 noextract=()
 
 md5sums=('51e4ae2c51edf7c145d1b87bec4c344e'
-         '06dc8133b1819e88a4cbfd4c1988663d'
-         'd54ddf5006391089c0310f8234f15a05'
-         '08c14987eff940db4af19ed54acfda7c'
+         '723ae24e95a2889cb82b00bfefa42d45'
+         '933688454e4feae6084ce72d63eea3c4'
+         '065ec7500654b2e5e766e127505c73fe'
          'f5944208daf02cac82016d80a5619daa'
          '35e726a55591db9734110d6e09bbaadd'
          '9d8f907b340cedc28f6148fb8665f0c2'
@@ -33,6 +33,10 @@ build() {
   cd "$srcdir/slurm-$pkgver"
 
   patch -p0 -i ../shtml2html.py.patch
+
+  # Fix hardcoded sbin paths
+  sed -i 's./sbin/slurmstepd./bin/slurmstepd.' src/slurmd/slurmd/slurmd.c
+  sed -i 's./sbin/slurmstepd./bin/slurmstepd.' src/common/env.c
 
   ./configure --prefix=/usr           \
               --sbindir=/usr/bin      \
