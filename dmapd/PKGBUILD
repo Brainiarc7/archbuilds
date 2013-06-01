@@ -3,7 +3,7 @@
 
 pkgname=dmapd
 pkgver=0.0.51
-pkgrel=3
+pkgrel=4
 pkgdesc="Serve DAAP (iTunes) and DPAP (iPhoto) shares from Linux"
 arch=('i686' 'x86_64')
 url="http://www.flyn.org/projects/dmapd/"
@@ -32,6 +32,9 @@ package() {
 
   # fix username in default config
   sed -i 's/User=dmapd/User=daemon/' distro/dmapd.conf
+
+  # fix daemon path in service file
+  sed -i 's/sbin/bin/' distro/dmapd.service
 
   # create cache directories
   install -d ${pkgdir}/var/cache/dmapd || return 1
