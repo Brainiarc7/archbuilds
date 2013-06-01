@@ -12,7 +12,7 @@ User=munge
 # Start up will fail if /etc/munge/munge.key does not exist
 # A fresh key can be generated with /usr/sbin/create-munge-key
 ExecStartPre=/usr/bin/test -r /etc/munge/munge.key
-ExecStart=/usr/sbin/munged 
+ExecStart=/usr/bin/munged
 ExecReload=/bin/kill -HUP $MAINPID
 PIDFile=/run/munge/munged.pid
 
