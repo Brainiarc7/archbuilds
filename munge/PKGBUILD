@@ -22,7 +22,7 @@ noextract=()
 md5sums=('49ec1b1d860b37967c9b8eb1057299bf'
          'a4f87c0073a22da1c4e2b60eb9ee1280'
          'b6e6a73c8a678777645ffcdb4b3e9d27'
-         'f21d755ab086a7f73b63d2e75964742d')
+         '3bfc3a7d734f9bc8dbc9877e3702774c')
 
 build() {
   cd "$srcdir/$pkgname-$pkgver"
