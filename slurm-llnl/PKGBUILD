@@ -17,7 +17,7 @@ backup=()
 options=()
 install=${pkgname}.install
 changelog=
-source=("slurm-llnl-tmpfiles.conf" "slurmdbd-llnl.service" "slurmd-llnl.service" "slurmctld-llnl.service" "arch_rc.d.slurm" "arch_rc.d.slurmdbd" "shtml2html.py.patch" "http://www.schedmd.com/download/latest/slurm-${pkgver}.tar.bz2")
+source=("slurm-tmpfiles.conf" "slurmdbd.service" "slurmd.service" "slurmctld.service" "arch_rc.d.slurm" "arch_rc.d.slurmdbd" "shtml2html.py.patch" "http://www.schedmd.com/download/latest/slurm-${pkgver}.tar.bz2")
 noextract=()
 
 md5sums=('51e4ae2c51edf7c145d1b87bec4c344e'
@@ -65,8 +65,8 @@ package() {
   install -D -m755 ../arch_rc.d.slurmdbd "${pkgdir}/etc/rc.d/slurmdbd"
 
   # SystemD related install
-  install -D -m644 ../slurmd-llnl.service        "${pkgdir}/usr/lib/systemd/system/slurmd-llnl.service"
-  install -D -m644 ../slurmctld-llnl.service     "${pkgdir}/usr/lib/systemd/system/slurmctld-llnl.service"
-  install -D -m644 ../slurmdbd-llnl.service      "${pkgdir}/usr/lib/systemd/system/slurmdbd-llnl.service"
-  install -D -m644 ../slurm-llnl-tmpfiles.conf   "${pkgdir}/etc/tmpfiles.d/slurm-llnl-tmpfiles.conf"
+  install -D -m644 ../slurmd.service        "${pkgdir}/usr/lib/systemd/system/slurmd.service"
+  install -D -m644 ../slurmctld.service     "${pkgdir}/usr/lib/systemd/system/slurmctld.service"
+  install -D -m644 ../slurmdbd.service      "${pkgdir}/usr/lib/systemd/system/slurmdbd.service"
+  install -D -m644 ../slurm-tmpfiles.conf   "${pkgdir}/etc/tmpfiles.d/slurm-tmpfiles.conf"
 }
