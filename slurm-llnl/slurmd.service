@@ -6,7 +6,7 @@ Requires=slurmctld.service
 [Service]
 Type=forking
 User=root
-ExecStart=/usr/bin/slurmd
+ExecStart=/usr/bin/slurmd -d /usr/bin/slurmstepd
 ExecStop=/bin/kill $MAINPID
 ExecReload=/bin/kill -HUP $MAINPID
 PIDFile=/run/slurmd.pid
