@@ -1,4 +1,6 @@
 # Maintainer: Fredrik Tegenfeldt <fredrik.tegenfeldt AT unige DOT ch>
+# Contributor: Alan Orth <alan.orth AT gmail DOT com >
+
 pkgname=slurm-llnl
 pkgver=2.5.6
 pkgrel=3
