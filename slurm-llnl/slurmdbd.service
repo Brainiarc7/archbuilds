@@ -1,7 +1,3 @@
-# systemd File for slurmdbd
-# Fredrik Tegenfeldt <fredrik.tegenfeldt@unige.ch>
-# October 2012
-
 [Unit]
 Description=Start/Stop the SLURMDBD service.
 After=mysqld.service

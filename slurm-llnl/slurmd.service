@@ -1,7 +1,3 @@
-# SystemD File for slurmd
-# Fredrik Tegenfeldt <fredrik.tegenfeldt@unige.ch>
-# January 2013
-
 [Unit]
 Description=Start/Stop the SLURM service.
 After=slurmctld.service systemd-tmpfiles-clean.service
