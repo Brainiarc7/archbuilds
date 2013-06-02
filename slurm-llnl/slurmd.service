@@ -4,7 +4,7 @@
 
 [Unit]
 Description=Start/Stop the SLURM service.
-After=slurmctld-llnl.service network.target auditd.service munged.service systemd-tmpfiles-clean.service
+After=slurmctld.service network.target auditd.service munged.service systemd-tmpfiles-clean.service
 
 [Service]
 Type=forking
