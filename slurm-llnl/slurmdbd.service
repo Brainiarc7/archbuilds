@@ -4,7 +4,9 @@
 
 [Unit]
 Description=Start/Stop the SLURMDBD service.
-After=slurmctld.service
+After=mysqld.service
+Before=slurmctld.service
+Requires=mysqld.service
 
 [Service]
 Type=forking

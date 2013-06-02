@@ -5,6 +5,7 @@
 [Unit]
 Description=Start/Stop the SLURMCTLD service.
 After=network.target auditd.service munged.service slurmdbd.service
+Requires=munged.service
 
 [Service]
 Type=forking
