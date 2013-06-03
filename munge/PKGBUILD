@@ -20,9 +20,9 @@ changelog=
 source=("http://munge.googlecode.com/files/$pkgname-$pkgver.tar.bz2" "arch_munge.init" "munged-tmpfiles.conf" "munged.service" )
 noextract=()
 md5sums=('49ec1b1d860b37967c9b8eb1057299bf'
-         'a4f87c0073a22da1c4e2b60eb9ee1280'
+         'bb26c2e0fc88e0ebf9db289f0d4baccd'
          'b6e6a73c8a678777645ffcdb4b3e9d27'
-         '3bfc3a7d734f9bc8dbc9877e3702774c')
+         'd75ff14323e8720504861d6cbe834d13')
 
 build() {
   cd "$srcdir/$pkgname-$pkgver"
