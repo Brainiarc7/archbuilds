@@ -14,10 +14,11 @@ post_install() {
      passwd -l slurm &>/dev/null
   fi
 
+  chown -R slurm:slurm /var/log/slurm
+
   echo
   echo "NOTE if you are using slurmdbd please remember to"
   echo " * edit slurmdbd.conf : change /var/run to /run"
-  echo " * create /var/log/slurm"
   echo
 }
 

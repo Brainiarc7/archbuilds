@@ -67,4 +67,7 @@ package() {
   install -D -m644 ../slurmctld.service     "${pkgdir}/usr/lib/systemd/system/slurmctld.service"
   install -D -m644 ../slurmdbd.service      "${pkgdir}/usr/lib/systemd/system/slurmdbd.service"
   install -D -m644 ../slurm-tmpfiles.conf   "${pkgdir}/etc/tmpfiles.d/slurm-tmpfiles.conf"
+
+  # log directory
+  install -d -m755 "${pkgdir}/var/log/slurm"
 }
