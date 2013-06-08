@@ -3,7 +3,7 @@
 
 pkgname=slurm-llnl
 pkgver=2.5.7
-pkgrel=1
+pkgrel=2
 pkgdesc="Simple Linux Utility for Resource Management"
 arch=('i686' 'x86_64')
 license=('GPL')
