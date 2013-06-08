@@ -28,10 +28,12 @@ pre_remove() {
   if [ $? -eq 0 ]; then
      systemctl stop slurmd.service
      systemctl stop slurmctld.service
+     systemctl stop slurmdbd.service
 
-     echo "Disabling systemd related file(s)"
+     echo "Disabling slurm systemd services"
      systemctl disable slurmd.service
      systemctl disable slurmctld.service
+     systemctl disable slurmdbd.service
   else
      /etc/rc.d/slurm stop
      /etc/rc.d/slurmdbd stop
