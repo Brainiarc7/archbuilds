@@ -25,12 +25,12 @@ pre_remove() {
   which systemctl >& /dev/null
   if [ $? -eq 0 ]; then
      echo "Stopping slurm daemons through systemd"
-     systemctl stop slurmd-llnl.service
-     systemctl stop slurmctld-llnl.service
+     systemctl stop slurmd.service
+     systemctl stop slurmctld.service
 
      echo "Disabling systemd related file(s)"
-     systemctl disable slurmd-llnl.service
-     systemctl disable slurmctld-llnl.service
+     systemctl disable slurmd.service
+     systemctl disable slurmctld.service
   else
      echo "Stopping slurm daemons"
      /etc/rc.d/slurm stop
