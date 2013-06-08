@@ -70,6 +70,9 @@ package() {
 
   # log directory
   install -d -m755 "${pkgdir}/var/log/slurm"
+
+  # fix pidfile location to match Arch's /run
+  sed -i 's.PidFile=/var/run.PidFile=/run.' etc/slurmdbd.conf.example
 }
 
 # vim:set ts=2 sw=2 et:

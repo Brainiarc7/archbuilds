@@ -15,11 +15,6 @@ post_install() {
   fi
 
   chown -R slurm:slurm /var/log/slurm
-
-  echo
-  echo "NOTE if you are using slurmdbd please remember to"
-  echo " * edit slurmdbd.conf : change /var/run to /run"
-  echo
 }
 
 pre_remove() {
