@@ -2,15 +2,15 @@
 post_install() {
   id slurm >&/dev/null
   if [ $? -ne 0 ]; then
-     echo "Adding slurm system group... "
+     echo "Adding slurm system group..."
      groupadd -r slurm
 
-     echo "Adding slurm system user... "
+     echo "Adding slurm system user..."
      uidopt=""
      [ -v SLURM_USER_ID ] && uidopt="-u ${SLURM_USER_ID}"
-     useradd -r -c "Slurm Daemon" -d /var/log/slurm -g slurm ${uidopt} slurm 
+     useradd -r -c "slurm daemon" -d /var/log/slurm -g slurm ${uidopt} slurm
 
-     echo "Locking Slurm User Account..."
+     echo "Locking slurm user account..."
      passwd -l slurm &>/dev/null
   fi
 
@@ -42,7 +42,7 @@ pre_remove() {
 
 ## arg 1:  the old package version
 post_remove() {
-  echo "Removing slurm system user/group "
+  echo "Removing slurm system user/group"
   userdel slurm
 }
 
