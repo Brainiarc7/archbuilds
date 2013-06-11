@@ -4,11 +4,11 @@ pkgver=1.1
 pkgrel=2
 pkgdesc='A radically simple deployment, model-driven configuration management, and command execution framework'
 arch=('any')
-url='http://ansible.cc/'
+url='http://www.ansibleworks.com'
 license=('GPL3')
 depends=('python2' 'python2-yaml' 'python2-paramiko>=1.7.7' 'python2-jinja')
 makedepends=('git' 'asciidoc' 'fakeroot')
-source=("http://ansible.cc/releases/$pkgname-$pkgver.tar.gz")
+source=("http://www.ansibleworks.com/releases/$pkgname-$pkgver.tar.gz")
 sha256sums=('5e7d2a46715484abcd2f59f846fb12699d64b420400cca4224ae6ec358f2d0a1')
 
 build() {
