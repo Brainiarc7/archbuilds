@@ -23,7 +23,9 @@ package() {
   cd "$srcdir/$pkgname-$pkgver"
 
   mkdir -p "${pkgdir}/usr/share/ansible"
-  cp ./library/* "${pkgdir}/usr/share/ansible/"
+  cp -dpr --no-preserve=ownership library/* "${pkgdir}/usr/share/ansible"
+  cp -dpr --no-preserve=ownership examples "${pkgdir}/usr/share/ansible"
+
   python2 setup.py install --root="${pkgdir}/" --optimize=1
 
   install -D examples/ansible.cfg "${pkgdir}/etc/ansible/ansbile.cfg"
