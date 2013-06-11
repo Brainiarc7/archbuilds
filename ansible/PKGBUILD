@@ -30,6 +30,9 @@ package() {
 
   install -D examples/ansible.cfg "${pkgdir}/etc/ansible/ansbile.cfg"
 
+  install -D README.md "${pkgdir}/usr/share/doc/ansible/README.md"
+  install -D COPYING "${pkgdir}/usr/share/doc/ansible/COPYING"
+
   mkdir -p "${pkgdir}/usr/share/man/man1"
   cp -dpr --no-preserve=ownership docs/man/man1/*.1 "${pkgdir}/usr/share/man/man1"
   mkdir -p "${pkgdir}/usr/share/man/man3"
