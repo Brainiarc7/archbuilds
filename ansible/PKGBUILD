@@ -11,6 +11,7 @@ makedepends=('git' 'asciidoc' 'fakeroot')
 conflicts=('ansible-git')
 source=("http://www.ansibleworks.com/releases/$pkgname-$pkgver.tar.gz")
 sha256sums=('5e7d2a46715484abcd2f59f846fb12699d64b420400cca4224ae6ec358f2d0a1')
+backup=('etc/ansible/ansible.cfg')
 
 build() {
   cd "$srcdir/$pkgname-$pkgver"
