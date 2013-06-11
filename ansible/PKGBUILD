@@ -30,8 +30,10 @@ package() {
 
   install -D examples/ansible.cfg "${pkgdir}/etc/ansible/ansbile.cfg"
 
-  install -D docs/man/man1/ansible.1 "${pkgdir}/usr/share/man/man1/ansible.1"
-  install -D docs/man/man1/ansible-playbook.1 "${pkgdir}/usr/share/man/man1/ansible-playbook.1"
+  mkdir -p "${pkgdir}/usr/share/man/man1"
+  cp -dpr --no-preserve=ownership docs/man/man1/*.1 "${pkgdir}/usr/share/man/man1"
+  mkdir -p "${pkgdir}/usr/share/man/man3"
+  cp -dpr --no-preserve=ownership docs/man/man3/*.3 "${pkgdir}/usr/share/man/man3"
 }
 
 # vim:set ts=2 sw=2 et:
