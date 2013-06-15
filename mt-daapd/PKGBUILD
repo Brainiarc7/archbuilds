@@ -17,7 +17,7 @@ source=(http://downloads.sourceforge.net/$pkgname/$pkgname-$pkgver.tar.gz \
 md5sums=('67bef9fb14d487693b0dfb792c3f1b05'
          '26cf6ff799ef06d262a8648d6890a250'
          '59896e760486a51170d8b0e7ed5a2506'
-         'e4fe850008da5206286c3ced6384ac4c')
+         'fde3fa3d5d48c05241b21b8b28d7ffa2')
 
 build() {
   cd "$srcdir/$pkgname-$pkgver"
@@ -30,7 +30,7 @@ build() {
   aclocal
   automake --add-missing
   autoreconf
-  ./configure --prefix=/usr --sysconfdir=/etc/mt-daapd --enable-avahi --enable-mdns
+  ./configure --prefix=/usr --sysconfdir=/etc/mt-daapd --sbindir=/usr/bin --enable-avahi --enable-mdns
   make  
   make DESTDIR="$pkgdir" install 
 
