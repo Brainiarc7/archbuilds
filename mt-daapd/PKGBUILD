@@ -35,6 +35,11 @@ build() {
   autoreconf
   ./configure --prefix=/usr --sysconfdir=/etc/mt-daapd --sbindir=/usr/bin --enable-avahi --enable-mdns
   make  
+}
+
+package() {
+  cd "$srcdir/$pkgname-$pkgver"
+
   make DESTDIR="$pkgdir" install 
 
   install -D -m644 $srcdir/$pkgname-$pkgver/contrib/mt-daapd.playlist $pkgdir/etc/mt-daapd/sample.playlist && \
