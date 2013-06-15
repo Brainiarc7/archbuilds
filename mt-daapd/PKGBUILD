@@ -13,11 +13,14 @@ license=('LGPL')
 depends=('libid3tag' 'avahi')
 backup=(etc/mt-daapd/mt-daapd.conf)
 source=(http://downloads.sourceforge.net/$pkgname/$pkgname-$pkgver.tar.gz \
-	mt-daapd fix-libs.patch mt-daapd.service)
+	mt-daapd fix-libs.patch mt-daapd.service mt-daapd.install)
 md5sums=('67bef9fb14d487693b0dfb792c3f1b05'
          '26cf6ff799ef06d262a8648d6890a250'
          '59896e760486a51170d8b0e7ed5a2506'
-         'fde3fa3d5d48c05241b21b8b28d7ffa2')
+         'fde3fa3d5d48c05241b21b8b28d7ffa2'
+         '17c0262f291a8aaa15efc5c8e3a8e2f7')
+
+install=mt-daapd.install
 
 build() {
   cd "$srcdir/$pkgname-$pkgver"
@@ -38,4 +41,7 @@ build() {
   install -D -m644 $srcdir/$pkgname-$pkgver/contrib/mt-daapd.conf $pkgdir/etc/mt-daapd/mt-daapd.conf && \
   install -D -m755 $srcdir/mt-daapd $pkgdir/etc/rc.d/mt-daapd && \
   install -D -m644 $srcdir/mt-daapd.service $pkgdir/usr/lib/systemd/system/mt-daapd.service
+
+  # create cache directories
+  install -d ${pkgdir}/var/cache/mt-daapd || return 1
 }
