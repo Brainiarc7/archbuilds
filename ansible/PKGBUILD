@@ -1,6 +1,6 @@
 # Maintainer: Alan Orth <alan.orth@gmail.com>
 pkgname=ansible
-pkgver=1.2.1
+pkgver=1.2.2
 pkgrel=1
 pkgdesc='A radically simple deployment, model-driven configuration management, and command execution framework'
 arch=('any')
@@ -10,7 +10,7 @@ depends=('python2' 'python2-yaml' 'python2-paramiko>=1.7.7' 'python2-jinja')
 makedepends=('git' 'asciidoc' 'fakeroot')
 conflicts=('ansible-git')
 source=("http://www.ansibleworks.com/releases/$pkgname-$pkgver.tar.gz")
-sha256sums=('aaf9835a5d81f2a6b8cabc1982e516a25fe8f7a265bfcadfd96002bd54843f5e')
+sha256sums=('2d5a4a1e21f3543cc96293743ad981cca5df9f9abda62c0a31d144f3ddaf71a3')
 backup=('etc/ansible/ansible.cfg')
 
 build() {
