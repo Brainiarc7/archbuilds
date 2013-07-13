@@ -36,13 +36,15 @@ build() {
 
   patch -p0 -i ../shtml2html.py.patch
 
-  ./configure --prefix=/usr           \
-              --sbindir=/usr/bin      \
-              --sysconfdir=/etc/slurm \
-	          --localstatedir=/       \
-              --with-ssl              \
-              --with-munge            \
-              --with-readline
+  ./configure               \
+    --prefix=/usr           \
+    --sbindir=/usr/bin      \
+    --sysconfdir=/etc/slurm \
+    --localstatedir=/       \
+    --with-ssl              \
+    --with-munge            \
+    --with-readline
+
   make
 }
 
