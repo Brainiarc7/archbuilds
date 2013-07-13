@@ -11,7 +11,7 @@ url="http://www.schedmd.com"
 groups=()
 depends=('python2' 'munge' 'lua' 'hwloc')
 makedepends=('openssl>=0.9.6' 'readline' 'lua')
-optdepends=('gtk2' 'libmysqlclient>=5.0.0' 'postgresql-libs')
+optdepends=('gtk2' 'libmariadbclient>=5.0.0' 'postgresql-libs')
 provides=(slurm)
 conflicts=()
 replaces=()
