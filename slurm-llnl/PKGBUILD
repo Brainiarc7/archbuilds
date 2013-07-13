@@ -9,9 +9,9 @@ arch=('i686' 'x86_64')
 license=('GPL')
 url="http://www.schedmd.com"
 groups=()
-depends=('python2' 'libmysqlclient>=5.0.0' 'postgresql-libs' 'munge' 'lua' 'hwloc')
+depends=('python2' 'munge' 'lua' 'hwloc')
 makedepends=('openssl>=0.9.6' 'readline' 'lua')
-optdepends=('gtk2')
+optdepends=('gtk2' 'libmysqlclient>=5.0.0' 'postgresql-libs')
 provides=(slurm)
 conflicts=()
 replaces=()
@@ -40,7 +40,6 @@ build() {
               --sbindir=/usr/bin      \
               --sysconfdir=/etc/slurm \
 	          --localstatedir=/       \
-              --with-mysql            \
               --with-ssl              \
               --with-munge            \
               --with-readline
