@@ -2,10 +2,10 @@
 # Maintainer: Tobias Powalowski <tpowa@archlinux.org>
 # Maintainer: Thomas Baechler <thomas@archlinux.org>
 
-pkgbase=linux-lts310               # Build stock -ARCH kernel
+pkgbase=linux-lts310.custom              # Build stock -ARCH kernel
 #pkgbase=linux-custom       # Build kernel with a different name
 _srcname=linux-3.10
-pkgver=3.10.15
+pkgver=3.10.15.custom
 pkgrel=1
 arch=('i686' 'x86_64')
 url="http://www.kernel.org/"
